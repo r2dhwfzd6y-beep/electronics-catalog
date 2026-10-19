@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Каталог электроники и техники. Выберите товары и отправьте заказ в WhatsApp.">
+  <title>Магазин электроники — каталог</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="На главную">
+      <span class="brand-mark">Э</span>
+      <span>
+        <strong id="storeName">Магазин электроники</strong>
+        <small>Каталог товаров</small>
+      </span>
+    </a>
+    <button class="cart-top" id="openCart" type="button" aria-label="Открыть корзину">
+      <span aria-hidden="true">🛒</span> Корзина <b id="cartCount">0</b>
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">ТЕХНИКА · ГАДЖЕТЫ · АКСЕССУАРЫ</p>
+        <h1>Выбирайте. Мы подтвердим наличие.</h1>
+        <p class="hero-copy">Посмотрите каталог, добавьте нужные товары в корзину и отправьте список заказа в WhatsApp.</p>
+      </div>
+      <div class="hero-chip"><span class="live-dot"></span> Актуальность уточняется при заказе</div>
+    </section>
+
+    <section class="catalog-tools" aria-label="Поиск и категории">
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Поиск по названию, бренду или модели…" autocomplete="off">
+        <button id="clearSearch" class="clear-search" type="button" aria-label="Очистить поиск" hidden>×</button>
+      </label>
+      <div id="categoryList" class="category-list" aria-label="Категории"></div>
+      <div class="results-line"><span id="resultsCount">Загружаем каталог…</span><button id="refreshBtn" class="text-button" type="button">Обновить</button></div>
+    </section>
+
+    <section id="productGrid" class="product-grid" aria-live="polite"></section>
+    <section id="emptyState" class="empty-state" hidden>
+      <div class="empty-icon">⌕</div>
+      <h2>Ничего не найдено</h2>
+      <p>Попробуйте изменить поисковый запрос или выбрать другую категорию.</p>
+      <button id="resetFilters" class="button button-secondary" type="button">Сбросить фильтры</button>
+    </section>
+
+    <section class="how-it-works">
+      <div><span class="step-number">01</span><strong>Выберите товары</strong><p>Добавьте в корзину одну или несколько позиций.</p></div>
+      <div><span class="step-number">02</span><strong>Проверьте заказ</strong><p>Количество и итоговая сумма посчитаются автоматически.</p></div>
+      <div><span class="step-number">03</span><strong>Отправьте в WhatsApp</strong><p>Откроется готовое сообщение для подтверждения заказа.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> <span id="footerStoreName">Магазин электроники</span></span>
+      <span>Цены и наличие подтверждаются при оформлении заказа.</span>
+    </div>
+  </footer>
+
+  <div id="cartBackdrop" class="backdrop" hidden></div>
+  <aside id="cartPanel" class="cart-panel" aria-labelledby="cartTitle" aria-modal="true" role="dialog" hidden>
+    <div class="cart-header">
+      <div><p class="eyebrow">ВАШ ВЫБОР</p><h2 id="cartTitle">Корзина <span id="cartCountTitle">(0)</span></h2></div>
+      <button id="closeCart" class="icon-button" type="button" aria-label="Закрыть корзину">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div id="cartEmpty" class="cart-empty"><span>🛍️</span><strong>Корзина пока пуста</strong><p>Добавьте товары из каталога.</p></div>
+    <div class="cart-footer">
+      <div class="total-row"><span>Итого</span><strong id="cartTotal">0 ₽</strong></div>
+      <label class="field-label" for="customerName">Ваше имя <span>(необязательно)</span></label>
+      <input id="customerName" class="customer-input" type="text" placeholder="Как к вам обращаться?">
+      <button id="whatsappOrder" class="button button-whatsapp" type="button">Отправить заказ в WhatsApp <span aria-hidden="true">↗</span></button>
+      <p id="whatsappNotice" class="notice">Перед запуском укажите номер WhatsApp в файле app.js.</p>
+      <button id="clearCart" class="text-button clear-cart" type="button">Очистить корзину</button>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
