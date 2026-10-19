@@ -7,7 +7,7 @@
  */
 const STORE_NAME = "Магазин электроники";
 const CURRENCY = "RUB";
-const WHATSAPP_NUMBER = ""; // например: "79991234567"
+const WHATSAPP_NUMBER = ""; // например: "79380007702"
 const SHEET_API_URL = "./products.json";
 
 const SAMPLE_PRODUCTS = [
