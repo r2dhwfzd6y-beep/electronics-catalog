@@ -8,7 +8,7 @@
 const STORE_NAME = "Магазин электроники";
 const CURRENCY = "RUB";
 const WHATSAPP_NUMBER = ""; // например: "79991234567"
-const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbx-BxvQdI6oWb0GIrx59E1aNSIPSKvfpcZzdXK8PfeV2gFdiWes_KY_LaG-CcowXkuv/exec";
+const SHEET_API_URL = "./products.json";
 
 const SAMPLE_PRODUCTS = [
   { id:"demo-001", name:"Смартфон Nova X", brand:"Nova", model:"128 ГБ · чёрный", category:"Смартфоны", price:24990, stock:true, image:"", description:"Демонстрационный товар. Замените своими данными." },
