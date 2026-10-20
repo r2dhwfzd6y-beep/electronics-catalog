@@ -20,7 +20,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(79,70,229,.2
 [hidden] { display: none !important; }
 .site-header { height: 76px; padding: 0 max(22px, calc((100vw - 1180px)/2)); display:flex; align-items:center; justify-content:space-between; gap:18px; background:rgba(255,255,255,.94); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; backdrop-filter:blur(14px); }
 .brand { display:flex; align-items:center; gap:12px; color:inherit; text-decoration:none; min-width:0; }
-.brand-mark { width:42px; height:42px; display:grid; place-items:center; border-radius:13px; color:#fff; font-weight:850; font-size:22px; background:linear-gradient(135deg,#655cf3,#3730a3); box-shadow:0 6px 16px #4f46e533; }
+.brand-mark { width:42px; height:42px; display:grid; place-items:center; border-radius:13px; color:#fff; font-weight:850; font-size:22px; background:linear-gradient(135deg,#655cf3,#3730a3); box-shadow:0 6px 16px #0066FF33; }
 .brand strong { display:block; font-size:15px; letter-spacing:-.2px; }
 .brand small { display:block; color:var(--muted); font-size:12px; margin-top:3px; }
 .cart-top { border:1px solid var(--line); background:#fff; border-radius:13px; padding:10px 14px; font-weight:700; display:flex; align-items:center; gap:8px; white-space:nowrap; }
