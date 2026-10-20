@@ -106,7 +106,7 @@ function renderProducts() {
   $("productGrid").hidden = list.length === 0;
   $("productGrid").querySelectorAll("[data-add]").forEach(btn => btn.addEventListener("click", (event) => { event.stopPropagation(); toggleProduct(btn.dataset.add); }));
 }
-function topenProduct(id) {
+function openProduct(id) {
   const p = products.find(item => item.id === id);
   if (!p) return;
 
@@ -117,6 +117,7 @@ function topenProduct(id) {
     `${p.description || ""}`
   );
 }
+  function toggleProduct(id) {
   const product = products.find(p => p.id === id);
   if (!product || !product.stock) return;
   if (cart.has(id)) cart.delete(id);
