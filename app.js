@@ -89,7 +89,7 @@ function renderProducts() {
     const image = p.image
       ? `<img class="product-image" src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" loading="lazy" onerror="this.outerHTML='<div class=&quot;image-placeholder&quot;><span>▧</span><small>Фото не загружено</small></div>'">`
       : `<div class="image-placeholder"><span>▧</span><small>Фото товара</small></div>`;
-    return `<article class="product-card" data-product-id="${escapeHtml(p.id)}">
+    return `<article class="product-card" data-product-id="${escapeHtml(p.id)}" onclick="openProduct('${escapeHtml(p.id)}')">
       <div class="product-image-wrap">${image}<span class="stock-badge ${p.stock?"":"out"}">${p.stock?"В наличии":"Нет в наличии"}</span></div>
       <div class="product-info">
         <div class="product-category">${escapeHtml(p.category)}</div>
@@ -104,9 +104,19 @@ function renderProducts() {
   }).join("");
   $("emptyState").hidden = list.length !== 0;
   $("productGrid").hidden = list.length === 0;
-  $("productGrid").querySelectorAll("[data-add]").forEach(btn => btn.addEventListener("click", () => toggleProduct(btn.dataset.add)));
+  $("productGrid").querySelectorAll("[data-add]").forEach(btn => btn.addEventListener("click", (event) => { event.stopPropagation(); toggleProduct(btn.dataset.add); }));
 }
-function toggleProduct(id) {
+function topenProduct(id) {
+  const p = products.find(item => item.id === id);
+  if (!p) return;
+
+  alert(
+    `${p.name}\n\n` +
+    `Модель: ${p.model}\n` +
+    `Цена: ${formatPrice(p.price)}\n\n` +
+    `${p.description || ""}`
+  );
+}
   const product = products.find(p => p.id === id);
   if (!product || !product.stock) return;
   if (cart.has(id)) cart.delete(id);
