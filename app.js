@@ -104,7 +104,7 @@ function renderProducts() {
   }).join("");
   $("emptyState").hidden = list.length !== 0;
   $("productGrid").hidden = list.length === 0;
-  $("productGrid").querySelectorAll("[data-add]").forEach(btn => btn.addEventListener("click", (event) => { event.stopPropagation(); toggleProduct(btn.dataset.add); }));
+  $($("productGrid").querySelectorAll("[data-add]").forEach(btn => btn.addEventListener("click", (event) => { event.stopPropagation(); toggleProduct(btn.dataset.add); }));
 }
 function openProduct(id) {
   const p = products.find(item => item.id === id);
