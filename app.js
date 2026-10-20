@@ -89,7 +89,7 @@ function renderProducts() {
     const image = p.image
       ? `<img class="product-image" src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" loading="lazy" onerror="this.outerHTML='<div class=&quot;image-placeholder&quot;><span>▧</span><small>Фото не загружено</small></div>'">`
       : `<div class="image-placeholder"><span>▧</span><small>Фото товара</small></div>`;
-    return `<article class="product-card">
+    return `<article class="product-card" data-product-id="${escapeHtml(p.id)}">
       <div class="product-image-wrap">${image}<span class="stock-badge ${p.stock?"":"out"}">${p.stock?"В наличии":"Нет в наличии"}</span></div>
       <div class="product-info">
         <div class="product-category">${escapeHtml(p.category)}</div>
